@@ -1,0 +1,43 @@
+<resources>
+    <!-- Main activity -->
+    <string name="app_name">Over-the-Air Download</string>
+    <string name="button_connect">Connect</string>
+
+    <!-- FW Update activity -->
+    <string name="title_activity_fw_update">FwUpdateActivity</string>
+
+    <string name="label_state">State:</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connected">Connected</string>
+
+    <string name="label_new_image">Image to Program</string>
+    <string name="select_image">Select image...</string>
+
+    <string name="label_program">OAD</string>
+    <string name="safe_mode">Safe mode </string>
+    <string name="label_block_delay">Block delay:</string>
+    <string name="start_prog">Start Programming</string>
+    <string name="cancel">Cancel</string>
+    <!--
+    <string name="prog_ongoing">NB! Not permitted to close this view during OAD transfer</string>
+-->
+    <string name="label_progress">Progress:</string>
+    <string name="label_log">Log</string>
+
+    <string name="oad_dialog_programming_finished">Firmware upgrade finished. The device should disconnect. This will be evident by the device restarting and LED start blinking again.</string>
+
+
+    <string-array name="image_arrays">
+        <item>&lt;no image selected&gt; </item>
+        <item>Example Image</item>
+        <item>Browse...</item>
+    </string-array>
+
+    <!-- File activity -->
+    <string name="title_activity_file">FileActivity</string>
+    <string name="label_directory">Select a file from the external storage: </string>
+    <string name="btn_txt_confirm">Confirm</string>
+
+
+
+</resources>

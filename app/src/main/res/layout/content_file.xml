@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.ti.oadexample.FileActivity"
+    tools:showIn="@layout/activity_file"
+    android:focusableInTouchMode="true"
+    >
+
+    <TextView android:id="@+id/lbl_directory"
+        android:text="@string/label_directory"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_directory"
+        android:text="download"
+        android:textColor="#003"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbl_directory"
+        android:singleLine="true"/>
+    <ImageButton android:id="@+id/data_write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onDirChanged"
+        android:background="@null"
+        android:src="@drawable/ic_action_refresh"
+        android:layout_alignTop="@id/et_directory"
+        android:layout_alignBottom="@id/et_directory"
+        android:layout_alignRight="@id/et_directory" />
+
+    <ListView
+        android:id="@+id/lv_file"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_confirm"
+        android:layout_below="@id/et_directory"
+        android:choiceMode="singleChoice"
+        android:padding="1dp"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:headerDividersEnabled="true"
+        android:background="@drawable/list_border"
+        android:listSelector="@drawable/states_selector_list"
+        />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onConfirm"
+        android:text="@string/btn_txt_confirm"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

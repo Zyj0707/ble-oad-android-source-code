@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorFwUpdateBkg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ti.oadexample.FwUpdateActivity"
+    tools:showIn="@layout/activity_fw_update"
+    >
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <!-- connection status -->
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingTop="10dp"
+                android:paddingBottom="0dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp">
+                <TextView
+                    style="@style/labelStyle"
+                    android:layout_gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/label_state"
+                    android:paddingRight="10dp"/>
+
+                <TextView android:id="@+id/connection_state"
+                    style="@style/dataStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/disconnected" />
+            </LinearLayout>
+
+            <!-- Image to program -->
+            <RelativeLayout
+                android:layout_margin="10dp"
+                android:background="@drawable/group_box"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="1dp"
+                >
+
+                <!-- Header -->
+                <TextView android:id="@+id/tv_image_label"
+                          style="@style/labelStyle"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/label_new_image"
+                          android:gravity="center_vertical"
+                          android:layout_alignParentTop="true"
+                          android:paddingBottom="10dp"/>
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@id/tv_image_label">
+
+                    <!-- Selected image -->
+                    <TextView android:id="@+id/tv_new_image"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text=""
+                              android:layout_toLeftOf="@+id/btn_selectImage"
+                              android:layout_alignParentStart="true"
+                              android:layout_centerVertical="true"/>
+
+                    <!-- Select image button -->
+                    <Button android:id="@+id/btn_selectImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/select_image"
+                            android:onClick="onSelectImage"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!-- Logging -->
+            <RelativeLayout
+                android:layout_margin="10dp"
+                android:background="@drawable/group_box"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="1dp" >
+                <TextView
+                    android:id="@+id/tv_label_log"
+                    style="@style/labelStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="@string/label_log"
+                    android:layout_alignParentTop="true"
+                    android:paddingBottom="10dp"/>
+                <TextView
+                    android:id="@+id/tv_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:scrollbars="vertical"
+                    android:maxLines="10"
+                    android:gravity="bottom"
+                    android:layout_below="@id/tv_label_log"/>
+
+            </RelativeLayout>
+
+
+            <!-- Programming stuff -->
+            <LinearLayout
+                android:background="@drawable/group_box"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="1dp"
+                >
+
+                <!-- Header -->
+                <TextView
+                    style="@style/labelStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:paddingBottom="10dp"
+                    android:text="@string/label_program"/>
+
+                <!-- Safe mode -->
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/safe_mode"
+                    android:id="@+id/cbSafeMode"
+                    android:paddingBottom="5dp"
+                    android:onClick="onSafeMode"
+                    android:textColor="#8A000000"/>
+
+
+                <!-- Block delay -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="6dp">
+
+                    <!-- Header-->
+                    <TextView
+                        android:id="@+id/labelDelay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="6dp"
+                        android:text="@string/label_block_delay"
+                        android:layout_below="@+id/cbSafeMode"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                    <!-- Slider -->
+                    <SeekBar
+                        android:id="@+id/sbDelay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:max="50"
+                        android:progress="20"
+                        />
+
+                    <!-- Value -->
+                    <TextView
+                        android:id="@+id/tvDelay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingLeft="6dp"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </LinearLayout>
+
+
+                <!-- Line with progress status -->
+                <TextView
+                    android:id="@+id/tv_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textSize="14sp" />
+
+                <!-- Progress bar -->
+                <ProgressBar
+                    android:id="@+id/pb_progress"
+                    style="@android:style/Widget.Holo.Light.SeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:maxHeight="15dp"
+                    android:minHeight="15dp"
+                    android:progress="0" />
+
+                <!-- Program button -->
+                <Button
+                    android:id="@+id/btn_program"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onProgramImage"
+                    android:text="@string/start_prog" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
